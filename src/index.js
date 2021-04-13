@@ -4,7 +4,6 @@ class CountdownTimer{
     constructor(selector, targetDate) {
         this.selector = document.querySelector(selector);
         this.targetDate = targetDate;
-        this.time = 
     }
 }
 
