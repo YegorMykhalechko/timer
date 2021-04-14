@@ -10,13 +10,10 @@ html {
 
 body {
   font-family: 'VT323', sans-serif;
-  /*
-   * CSS image reference example.
-   background-image: url('./images/bg-pattern.png');
-   */
 }
 
 .timer {
+  padding-top: 150px;
   display: flex;
   justify-content: center;
 }
@@ -48,4 +45,54 @@ body {
 .label {
   font-size: 24px;
   text-shadow: 1px 1px 1px silver, -1px 1px 1px silver;
+}
+
+.lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration) var(--timing-function);
+  outline: none;
+  background-image: url('./images/icon-close.svg');
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.lightbox__button:hover,
+.lightbox__button:focus {
+  background-color: rgba(0, 0, 0, 0.5);
 }

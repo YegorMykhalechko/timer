@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="timer" id="timer-1">
@@ -33,6 +32,17 @@
         <span class="label">Seconds</span>
       </div>
     </div>
-    <script type="module" src="./index.js"></script>
+    <div class="lightbox js-lightbox">
+      <div class="lightbox__overlay">
+        <div class="lightbox__image">
+          <img src="./images/klipartz.com.png" alt="boom">
+        </div>
+      </div>
+      <button
+        type="button"
+        class="lightbox__button"
+        data-action="close-lightbox"
+      ></button>
+    </div>
   </body>
 </html>
