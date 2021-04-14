@@ -1,4 +1,4 @@
-GHP: 
+GHP: https://yegormykhalechko.github.io/timer/
 Для быстрого старта необходимо склонировать репозиторий.
 
 ```shell
