@@ -7,23 +7,20 @@ export default class CountdownTimer {
     };
     start() {
         this.id = setInterval(() => {
+            this.stop()
             const currentTime = Date.now();
             const time = this.targetDate - currentTime;
             const secs = Math.floor((time % (1000 * 60)) / 1000);
             const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
             const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const days = Math.floor(time / (1000 * 60 * 60 * 24));
-            this.updateTimer(secs, mins, hours, days);
+            this.updateTimer(secs < 10 ? `0${secs}` : secs, mins < 10 ? `0${mins}` : mins, hours < 10 ? `0${hours}` : hours, days);
         }, 1000);
     };
 
     stop() {
         const currentTime = Date.now();
-        if (currentTime === this.targetDate) {
-            clearInterval(this.id); 
-        };
-
-        if (currentTime > this.targetDate) {
+        if (currentTime >= this.targetDate) {
             clearInterval(this.id);
             this.updateModal();
         };
